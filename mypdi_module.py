@@ -1,7 +1,14 @@
 import numpy as np
 
+def normImage(img):
+    newimg = img.copy()
+    newimg = newimg.astype('float64')
+    maxval = newimg.max()
+    minval = newimg.min()
+    newimg = (newimg - minval)/(maxval - minval)
+    return newimg
 
-def normImage(img, val):
+def normImage16(img, val):
     newimg = img.copy()
     newimg = newimg.astype('float64')
     maxval = newimg.max()
